@@ -1,4 +1,7 @@
-function updateTasks(candidate, inputString) {
+function updateTasks(inputField) {
+	var candidate = $(inputField).attr('name');
+	var inputString = $(inputField).val();
+
 	var tasks = inputString.split("\n");
 	var $tasksList = $('.tasks__list--' + candidate);
 	$tasksList.empty();
@@ -12,11 +15,18 @@ function updateTasks(candidate, inputString) {
 	}
 }
 
-$('.input__candidate').keyup(function() {
-	var candidate = $(this).attr('name');
-	var value = $(this).val();
+function seed() {
+	$('.input__candidate--trump').val('Stop lying \nThen again, we\'re not fact checkers')
+	updateTasks('.input__candidate--trump');
 
-	updateTasks(candidate, value);
+	$('.input__candidate--clinton').val('Be the Clinton who shines in a smaller crowd \nTry not to sound too smart')
+	updateTasks('.input__candidate--clinton');
+}
+
+seed();
+
+$('.input__candidate').keyup(function() {
+	updateTasks(this);
 })
 
 
