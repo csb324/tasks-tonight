@@ -3,37 +3,35 @@ $blue: #2F5693;
 $light-blue: #9CCAEB;
 
 body {
-
 	background-color: #F1F3F2;
 	font-family: 'Open Sans Condensed', sans-serif;
-}
-
-.wrapper {
-	position: relative;
-	display: flex;
-	min-height: 100vh;
+	font-size: 16px;
 	text-transform: uppercase;	
 }
 
+.sidebar {
+	padding: 0;
+}
+.main {
+	text-align: center;
+}
 
 .input {
 	background-color: $blue;
-	display: inline-block;
 	padding: 20px;
 }
-
 	.input__candidate {
 		display: block;
 		margin-bottom: 20px;
 		font-family: Helvetica, sans-serif;
+		width: 100%;
+		padding: 10px;
 	}
-
 	.input__label {
 		color: #fff;
 		font-size: 1.2em;
 		line-height: 1.3;
 	}
-
 	.input__submit {
 		display: block;
 		background-color: $red;
@@ -44,7 +42,16 @@ body {
 
 		font-size: 1.4em;
 		border-bottom: 3px solid darken($red, 15%);
+
+		margin-bottom: 1em;
+
+		&:hover, &:active, &:focus {
+			color: #fff;
+			text-decoration: none;
+			background-color: darken($red, 5%);
+		}
 	}
+
 
 .credits {
 	color: #fff;
@@ -56,7 +63,6 @@ body {
 
 	background-color: darken($blue, 10%);
 	padding: 10px 20px;
-	max-width: 250px;
 	li {
 		margin-bottom: 0.8em;
 		margin-top: 0.8em;
@@ -66,70 +72,65 @@ body {
 	}
 }
 
+
 .tasks {
 	position: relative;
 	display: inline-block;
-
-	align-self: flex-start;
+	text-align: left;
 }
 
-.tasks__list {
-	position: absolute;
-	left: 26%;
-	right: 22%;
-	font-size: 2em;
-	text-transform: uppercase;
-	list-style: none;
-	padding-left: 0;
-	line-height: 1.2;
-	letter-spacing: -0.01em;
-}
+	.tasks__list {
+		position: absolute;
+		left: 26%;
+		right: 22%;
+		font-size: 2em;
+		text-transform: uppercase;
+		list-style: none;
+		padding-left: 0;
+		line-height: 1.2;
+		letter-spacing: -0.01em;
+	}
 
 
-.tasks__list--trump {
-	top: 10%;
+	.tasks__list--trump {
+		top: 14%;
+		.tasks__bullet {
+			color: $red;
+		}
+	}
+	.tasks__list--clinton {
+		top: 62%;
+		.tasks__bullet {
+			color: $blue;
+		}
+	}
+
+	.tasks__list-item {
+		margin-bottom: 0.3em;
+		position: relative;
+	}
 	.tasks__bullet {
-		color: $red;
+		position: absolute;
+		left: -15px;
 	}
+
+
+// modal-related styles
+// overriding bootstrap where it's ugly
+.modal-content {
+	border-radius: 0;
 }
-.tasks__list--clinton {
-	top: 58%;
-	.tasks__bullet {
-		color: $blue;
-	}
+.modal-body {
+	padding: 0;
 }
-
-.tasks__list-item {
-	margin-bottom: 0.3em;
-	position: relative;
+.modal-header {
+	color: #fff;
+	background-color: black;
 }
-.tasks__bullet {
-	position: absolute;
-	left: -15px;
+.close {
+	color: #fff;
+	opacity: 1;
 }
-
-
-
-.lightbox {
-	display: none;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.6);
-	text-align: center;
-
-	&.open {
-		display: block;
-	}
+.lightbox__image {
+	max-width: 100%;
 }
-
-	.lightbox__headline {
-		margin: 0;
-		color: #fff;
-	}
-	.lightbox__close {
-		display: inline-block;
-		color: $light-blue;
-	}

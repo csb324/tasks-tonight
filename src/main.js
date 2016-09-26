@@ -16,10 +16,14 @@ function updateTasks(inputField) {
 }
 
 function seed() {
-	$('.input__candidate--trump').val('Stop lying \nThen again, we\'re not fact checkers')
+	$('.input__candidate--trump')
+		.val('Stop lying \nThen again, we\'re not fact checkers')
+
 	updateTasks('.input__candidate--trump');
 
-	$('.input__candidate--clinton').val('Be the Clinton who shines in a smaller crowd \nTry not to sound too smart')
+	$('.input__candidate--clinton')
+		.val('Be the Clinton who shines in a smaller crowd \nIn front of the entire country');
+
 	updateTasks('.input__candidate--clinton');
 }
 
@@ -30,30 +34,14 @@ $('.input__candidate').keyup(function() {
 })
 
 
-
-function lightboxOn() {
-	$('.lightbox').addClass('open');
-	$('.wrapper').addClass('lightbox-open');
-}
-
-function lightboxOff() {
-	$('.lightbox').removeClass('open');
-	$('.wrapper').removeClass('lightbox-open');
-}
-
 $('#go').on('click', function(){
-	
+
 	html2canvas($("#tasks-canvas"), {
     onrendered: function(canvas) {
       var myImage = canvas.toDataURL("image/png");
 			$('.image').attr('src', myImage);
-			lightboxOn();
+			$('#lightbox').modal('show')
     }
   });
 
-});
-
-
-$('#close').on('click', function(){
-	lightboxOff();
 });

@@ -6,43 +6,76 @@
 	<title>Tasks tonight</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 	<link rel="stylesheet" href="main.css">
+
 </head>
 <body>
 	
-	<div class="wrapper">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 sidebar">
+				<div class="input">
+					<div class="row">
+						<div class="col-sm-4 col-md-12">
+							<label class="input__label" for="trump">Trump's tasks tonight</label>
+							<textarea name="trump" id="trump" cols="30" rows="10" class="input__candidate input__candidate--trump"></textarea>
+						</div>
+						<div class="col-sm-4 col-md-12">
+							<label class="input__label" for="clinton">Clinton's tasks tonight</label>
+							<textarea name="clinton" id="clinton" cols="30" rows="10" class="input__candidate input__candidate--clinton"></textarea>
+						</div>
 
-		<div class="input">
-			<label class="input__label" for="trump">Trump's tasks tonight</label>
-			<textarea name="trump" id="trump" cols="30" rows="10" class="input__candidate input__candidate--trump"></textarea>
+						<div class="col-sm-4 col-md-12">
+							<a href="#" class="input__submit" id="go">Save it</a>		
 
-			<label class="input__label" for="clinton">Clinton's tasks tonight</label>
-			<textarea name="clinton" id="clinton" cols="30" rows="10" class="input__candidate input__candidate--clinton"></textarea>
-			<a href="#" class="input__submit" id="go">Save it</a>		
 
-			<ul class="credits">
-				<li>by: <a href="http://github.com/csb324">clara beyer</a></li>
-				<li>inspired by: <a href="http://codepen.io/mpopv/pen/aNbqrq">make your own marco mag</a></li>
-				<li>with help from: <a href="https://html2canvas.hertzen.com/">html2canvas</a></li>
-			</ul>
+							<ul class="credits">
+								<li>by: <a href="http://github.com/csb324">clara beyer</a></li>
+								<li>inspired by: <a href="http://codepen.io/mpopv/pen/aNbqrq">make your own marco mag</a></li>
+								<li>with help from: <a href="https://html2canvas.hertzen.com/">html2canvas</a></li>
+								<li>you should: <a target="blank" href="https://twitter.com/home?status=http%3A//trumps-tasks-tonight.netlify.com/%20(via%20%40clarabellum)">tweet this</a></li>
+							</ul>
+						</div>
+					</div>
+					
 
+				</div>
+			</div>
+
+			<div class="col-md-9 main">
+				<div id="tasks-canvas" class="tasks">
+					<img src="tasks_blank.png" alt="Tasks" class="tasks__image">	
+					<ul class="tasks__list tasks__list--trump">
+					</ul>
+
+					<ul class="tasks__list tasks__list--clinton">
+						<li class="tasks__list-item"><span class="tasks__bullet">-</span> Be the clinton who shines in a smaller crowd</li>
+						<li class="tasks__list-item"><span class="tasks__bullet">-</span> Hey Hillary, Why don't people like you?</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 
-		<div id="tasks-canvas" class="tasks">
-			<img src="tasks_blank.png" alt="Tasks" class="tasks__image">	
-			<ul class="tasks__list tasks__list--trump">
-			</ul>
 
-			<ul class="tasks__list tasks__list--clinton">
-				<li class="tasks__list-item"><span class="tasks__bullet">-</span> Be the clinton who shines in a smaller crowd</li>
-				<li class="tasks__list-item"><span class="tasks__bullet">-</span> Hey Hillary, Why don't people like you?</li>
-			</ul>
-		</div>
 
-		<div class="lightbox">
-			<h2 class="lightbox__headline">Right click to save <a href="#" id="close" class="lightbox__close"> (click here to go back)</a></h2>
+		
 
-			<img src="tasks_original.png" alt="Right click to save!" class="image lightbox__image">
+		<div class="modal fade" id="lightbox">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Right click to save</h4>
+					</div>
+					<div class="modal-body">
+						<img src="tasks_original.png" alt="Right click to save!" class="image lightbox__image">						
+					</div>
+				</div>
+			</div>
+
 		</div>
 
 	</div>
@@ -50,6 +83,8 @@
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<script src="main.js"></script>
 
