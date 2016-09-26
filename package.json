@@ -4,12 +4,25 @@
   "description": "Clinton and Trump have some tasks tonight",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "livereload": "live-reload --port 9091 dist/",
+
+    "build:css": "sass styles/main.scss > dist/main.css",
+    "build:html": "ditto src/ dist/",
+    "build": "npm run build:css && npm run build:html",
+    
+    "watch:css": "watch 'npm run build:css' styles/",
+    "watch:html": "watch 'npm run build:html' src/",
+    "watch": "parallelshell 'npm run watch:css' 'npm run watch:html' 'npm run livereload'",
+    
+    "start": "npm run build && npm run watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "live-reload": "^1.1.0",
-    "node-sass": "^3.10.0"
+    "node-sass": "^3.10.0",
+    "parallelshell": "^2.0.0",
+    "watch": "^0.19.2"
   }
 }

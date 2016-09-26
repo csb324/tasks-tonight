@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tasks tonight</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+
+		<div class="input">
+			<label class="input__label" for="trump">Trump's tasks tonight</label>
+			<textarea name="trump" id="trump" cols="30" rows="10" class="input__candidate input__candidate--trump"></textarea>
+
+			<label class="input__label" for="clinton">Clinton's tasks tonight</label>
+			<textarea name="clinton" id="clinton" cols="30" rows="10" class="input__candidate input__candidate--clinton"></textarea>
+			<a href="#" class="input__submit" id="go">Save it</a>		
+		</div>
+
+		<div id="tasks-canvas" class="tasks">
+			<img src="tasks_blank.png" alt="Tasks" class="tasks__image">	
+			<ul class="tasks__list tasks__list--trump">
+				<li class="tasks__list-item">- Stop Lying</li>
+				<li class="tasks__list-item">- Show Humility</li>
+			</ul>
+
+			<ul class="tasks__list tasks__list--clinton">
+				<li class="tasks__list-item">- Make Jokes</li>
+				<li class="tasks__list-item">- Don't be a lame mom</li>
+			</ul>
+		</div>
+
+		<div class="lightbox">
+			<h2 class="lightbox__headline">Right click to save <a href="#" id="close" class="lightbox__close"> (click here to go back)</a></h2>
+
+			<img src="tasks_original.png" alt="Right click to save!" class="image lightbox__image">
+		</div>
+
+	</div>
+
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+
+	<script src="main.js"></script>
+
+	<script src="//localhost:9091"></script>
+</body>
+</html>
