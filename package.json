@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "livereload": "live-reload --port 9091 dist/",
     "build:css": "node-sass styles/main.scss > dist/main.css",
-    "build:html": "ditto src/ dist/",
+    "build:html": "copyup src/* dist/",
     "build": "npm run build:css && npm run build:html",
     "prebuild": "rimraf dist && mkdirp dist",
     "watch:css": "watch 'npm run build:css' styles/",
@@ -18,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "copyfiles": "^1.0.0",
     "live-reload": "^1.1.0",
     "mkdirp": "^0.5.1",
     "node-sass": "^3.10.0",
