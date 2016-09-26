@@ -1,7 +1,9 @@
 $red: #981817;
 $blue: #2F5693;
+$light-blue: #9CCAEB;
 
 body {
+
 	background-color: #F1F3F2;
 	font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -44,6 +46,25 @@ body {
 		border-bottom: 3px solid darken($red, 15%);
 	}
 
+.credits {
+	color: #fff;
+	font-family: Helvetica, sans-serif;
+	text-transform: initial;
+	padding-left: 0;
+	list-style: none;
+	text-align: center;
+
+	background-color: darken($blue, 10%);
+	padding: 10px 20px;
+	max-width: 250px;
+	li {
+		margin-bottom: 0.8em;
+		margin-top: 0.8em;
+	}
+	a {
+		color: $light-blue;
+	}
+}
 
 .tasks {
 	position: relative;
@@ -60,9 +81,10 @@ body {
 	text-transform: uppercase;
 	list-style: none;
 	padding-left: 0;
-	line-height: 1.4;
+	line-height: 1.2;
 	letter-spacing: -0.01em;
 }
+
 
 .tasks__list--trump {
 	top: 10%;
@@ -78,8 +100,14 @@ body {
 }
 
 .tasks__list-item {
-	margin-bottom: 0.2em;
+	margin-bottom: 0.3em;
+	position: relative;
 }
+.tasks__bullet {
+	position: absolute;
+	left: -15px;
+}
+
 
 
 .lightbox {
@@ -103,5 +131,5 @@ body {
 	}
 	.lightbox__close {
 		display: inline-block;
-		color: #9CCAEB;
+		color: $light-blue;
 	}
